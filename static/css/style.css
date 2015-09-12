@@ -1,0 +1,236 @@
+.navigation {
+  /* critical sizing and position styles */
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #45173e;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width: 12.5em;
+  height: 2.5em;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #000;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: .5em;
+  background: #7d294d;
+  color: white;
+  font-size: 1em;
+  font-family: "Poiret One", "Arial", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+  font-size: 1.2em;
+  color: #b34659;
+  background: #f86159;
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  height: 400em;
+  min-width: 100%;
+  background-color: #ffffff; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 4em;
+  background-size: 200%;
+  margin-bottom: 100em;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("/static/img/hamburger.png");
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+body {
+  /* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #7d294d;
+  padding-top: 1.5em;
+  width: 80%;
+  height: 7em;
+  font-size: 100%;
+}
+
+.second {
+  background-color: #45173e;
+  color: #ffffff;
+  width: 90%;
+  height: 4.5em;
+  font-size: 100%
+}
+
+.text {
+  background-color: #f86159;
+  color: #7d294d;
+  width: 100%;
+  height: 32em;
+  font-size: 100%;
+  padding-top: 1em;
+  padding-right: 3em;
+}
+
+h1 {
+  max-width: 600px;
+  font-family: "Syncopate", "Arial", sans-serif;
+  font-size: 4.7em;
+  color: #45173e;
+}
+
+h3 {
+    max-width: 600px;
+    font-size: 3em;
+    color: #ffffff;
+    font-family: "Poiret One", "Arial", sans-serif;
+}
+
+p.text {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: "Poiret One", "Arial", sans-serif;
+}
+
+.js-header {
+  margin-top: 1em;
+  text-align: center;
+  font-family: "Syncopate", "Arial", sans-serif;
+  color: #45173e;
+  font-size: 4em;
+}
+
+.page {
+    font-family: "Poiret One", "Arial", sans-serif;
+    margin: 0 auto;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #7d294d;
+    text-align: left;
+}
+
+@media only screen and (max-width: 30em) {
+  .container, .jumbo, .navigation, .nav-item { font-size:80%;}
+  h1, h2, h3, p.page, a.page:link, h2.js-header, p.text {font-size: 80%;}
+}
+
+@media only screen and (max-width: 40em) {
+  .container, .jumbo, .navigation, .nav-item{ font-size:90%;}
+  h1, h2, h3, p, a, p.page, a.page:link, h2.js-header, p.text {font-size: 90%;}
+}  
+     
+@media only screen and (max-width: 50em) {
+  .container, .jumbo, .navigation, .nav-item { font-size:100%;}
+  h1, h2, h3, p, a, p.page, a.page:link, h2.js-header, p.text {font-size: 100%;}
+}
+
+
+a.page:link {
+  margin: 0 auto 3em;
+  color: #45173e;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Poiret One", "Arial", sans-serif;
+  line-height: 200%;
+  text-decoration: none;
+}
+
+a.page:visited {
+  color: #b34659;
+  font-size: 1.5em;
+  font-family: "Poiret One", "Arial", sans-serif;
+  text-decoration: none;
+}
+
+a.page:hover {
+  color: #ffffff;
+  background-color: #f86159;
+  font-size: 1.5em;
+  font-family: "Poiret One" "Arial" sans-serif;
+  text-decoration: none;
+}
+
+.icon {
+  padding: .5em;
+}
+
+p.contact {
+  color: #000000;
+  font-size: 1em;
+  font-weight: 800;
+  font-family: "Poiret One", "Arial", sans-serif;
+}
+
+a.contact {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #b34659;
+  font-size: 1em;
+  font-weight: 800;
+  font-family: "Poiret One", "Arial", sans-serif;
+}
+
+.footer {
+  width: 100%;
+  background-color: #b34659;
+}
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+

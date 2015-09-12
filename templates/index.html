@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link href='https://fonts.googleapis.com/css?family=Syncopate|Poiret+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+	<title>Link - a - Lot</title>
+</head>
+
+<body>
+	<ul class="navigation">
+		<li class="nav-item"><a href="{{ url_for('home') }}">HOME</a>	
+		<li class="nav-item"><a href="{{ url_for('html') }}">HTML</a>
+		<li class="nav-item"><a href="{{ url_for('css') }}">CSS</a>
+		<li class="nav-item"><a href="{{ url_for('js') }}">JavaScript</a>
+		<li class="nav-item"><a href="{{ url_for('py') }}">Python</a>	
+		<li class="nav-item"><a href="{{ url_for('datab') }}">Databases</a>
+		<li class="nav-item"><a href="{{ url_for('git') }}">Git and Github</a>
+		<li class="nav-item"><a href="{{ url_for('design') }}">Web Design</a>
+		<li class="nav-item"><a href="{{ url_for('articles') }}">Articles</a>
+	</ul>
+
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<label for="nav-trigger"></label>
+
+	<div class="site-wrap">
+		{% block content %}{% endblock %}
+	</div>
+
+	<div class="container">
+		{% block page %}{% endblock %}
+	</div>
+
+</body>
+</html>
